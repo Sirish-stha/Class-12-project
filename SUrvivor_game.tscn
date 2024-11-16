@@ -1,0 +1,210 @@
+[gd_scene load_steps=9 format=3 uid="uid://gndgndk5qia"]
+
+[ext_resource type="Script" path="res://survivor_game.gd" id="1_48c5q"]
+[ext_resource type="PackedScene" uid="uid://cc2igcoc4pgns" path="res://player.tscn" id="1_cagnh"]
+[ext_resource type="PackedScene" uid="uid://cd51veqlscyoy" path="res://pine_tree.tscn" id="2_jc6ym"]
+[ext_resource type="PackedScene" uid="uid://cqmnr5wmvagji" path="res://border.tscn" id="4_wjqte"]
+[ext_resource type="PackedScene" uid="uid://b4cvbpxic3sxc" path="res://border_vertical.tscn" id="5_uv2df"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7pqp7"]
+font_size = 60
+
+[sub_resource type="Curve2D" id="Curve2D_oyt1q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -166, -202, 0, 0, 0, 0, 1215.75, -189.481, 0, 0, 0, 0, 2615.71, -200.957, 0, 0, 0, 0, 2616.72, 1524.87, 0, 0, 0, 0, -162.98, 1529.79, 0, 0, 0, 0, -166, -202)
+}
+point_count = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_jfbmi"]
+font_size = 48
+font_color = Color(0.152476, 0.152476, 0.152476, 1)
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_48c5q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 2492.0
+offset_bottom = 1440.0
+color = Color(0.588235, 0.894118, 0.443137, 0.756863)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" parent="." instance=ExtResource("1_cagnh")]
+position = Vector2(1189, 682)
+
+[node name="PineTree" parent="." instance=ExtResource("2_jc6ym")]
+position = Vector2(249, 863)
+
+[node name="PineTree10" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(1526, -316)
+
+[node name="PineTree8" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(-97, 352)
+
+[node name="PineTree4" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(1905, -554)
+
+[node name="PineTree2" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(239, -606)
+
+[node name="PineTree3" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(409, 342)
+
+[node name="PineTree5" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(1931, 369)
+
+[node name="PineTree6" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(1513, -650)
+
+[node name="PineTree7" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(-49, -348)
+
+[node name="PineTree9" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(1032, 372)
+
+[node name="PineTree11" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(470, -232)
+
+[node name="PineTree12" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(845, -622)
+
+[node name="PineTree13" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(1408, 86)
+
+[node name="PineTree14" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(1130, -394)
+
+[node name="PineTree15" parent="PineTree" instance=ExtResource("2_jc6ym")]
+position = Vector2(1862, -98)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.596078)
+
+[node name="text" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[node name="yourscore" type="Label" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = 46.0
+offset_right = 214.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_7pqp7")
+
+[node name="Button" type="Button" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = 139.0
+offset_right = 176.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Play again"
+
+[node name="Homescreen" type="Button" parent="GameOver/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = 253.0
+offset_right = 175.0
+offset_bottom = 364.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Main menu"
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(210.664, 208.651)
+scale = Vector2(0.847372, 0.775498)
+curve = SubResource("Curve2D_oyt1q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+unique_name_in_owner = true
+position = Vector2(-166, -202)
+rotation = 0.00906
+
+[node name="Border" parent="." instance=ExtResource("4_wjqte")]
+position = Vector2(-4, 1420)
+
+[node name="Border_vertical2" parent="Border" instance=ExtResource("5_uv2df")]
+position = Vector2(2485, -1777)
+
+[node name="Border_vertical" parent="Border" instance=ExtResource("5_uv2df")]
+position = Vector2(-243, -1729)
+
+[node name="Border2" parent="Border" instance=ExtResource("4_wjqte")]
+position = Vector2(-8, -1841)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 306.0
+offset_top = 148.0
+offset_right = 1993.0
+offset_bottom = 1065.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="score" type="Label" parent="UI"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 394.0
+offset_bottom = 156.0
+label_settings = SubResource("LabelSettings_jfbmi")
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="GameOver/ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GameOver/ColorRect/Homescreen" to="." method="_on_homescreen_pressed"]
